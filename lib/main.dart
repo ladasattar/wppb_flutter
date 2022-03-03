@@ -39,13 +39,27 @@ class DetailScreen extends StatelessWidget {
               margin: const EdgeInsets.only(top: 16.0),
             ),
             Container(
+              margin: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget> [
+                  Column(
+                    children: const <Widget> [
+                      Icon(Icons.calendar_today),
+                      Text("Open Everyday"),
+                    ]
+                  )
+                ]
+              )
+            ),
+            Container(
               padding: const EdgeInsets.all(16.0),
               child: const Text(
                 "Surabaya Submarine Monument or as known as Monumen Kapal Selam (Monkasel) is the largest submarine monument in Asia, which was built in riverside of Kalimas, Surabaya. This monument was built by idea of Navy Veterans.",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16.0),
               )
-            )
+            ),
           ]
         )
       )
