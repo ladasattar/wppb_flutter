@@ -31,10 +31,33 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  int prima = 0;
+  String _text = "Ganjil";
+  String _text2 = "Prima ";
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      _text = "Genap ";
+      _text2 = "Prima ";
+
+      if (_counter >= 20) _counter = 0;
+
+      for (int i = 1; i <= _counter; i++) {
+        if (i % 2 == 0){
+          if (i % 3 == 0) _text += '${i}, ';
+        }
+      }
+
+      for (int i = 0; i <= _counter; i++) {
+        for (int n = 1; n <= i; n++) {
+          if (i % n == 0) prima++;
+        }
+        if (prima == 2) {
+          _text2 += '${i}, ';
+        }
+        prima = 0;
+      }
     });
   }
 
@@ -54,6 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              _text,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            Text(
+              _text2,
+              style: Theme.of(context).textTheme.headline5,
             ),
           ],
         ),
