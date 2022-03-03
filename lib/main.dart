@@ -27,6 +27,7 @@ class DetailScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget> [
+            Image.asset("assets/img/submarine-1.jpg"),
             Container(
               child: const Text(
                 "Surabaya Submarine Monument",
@@ -60,6 +61,30 @@ class DetailScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 16.0),
               )
             ),
+            SizedBox(
+              height: 150,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.network("https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg")
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.asset("assets/img/monkasel-1.jpg")
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.asset("assets/img/monkasel-2.jpg")
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.asset("assets/img/monkasel-3.jpg")
+                  ),
+                ]
+              )
+            )
           ]
         )
       )
