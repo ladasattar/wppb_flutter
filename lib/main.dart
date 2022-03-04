@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WPPB Flutter',
-      theme: ThemeData(),
+      theme: ThemeData(fontFamily: "Inter"),
       home: const DetailScreen(),
     );
   }
@@ -34,31 +34,35 @@ class DetailScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.black87
                 ),
               ),
               margin: const EdgeInsets.only(top: 16.0),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget> [
-                  Column(
-                    children: const <Widget> [
-                      Icon(Icons.calendar_today),
-                      Text("Open Everyday"),
-                    ]
-                  )
-                ]
-              )
+                margin: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+                child: const Icon(Icons.calendar_today),
+            ),
+            Container(
+              child: const Text(
+                "Open Everyday",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
             Container(
               padding: const EdgeInsets.all(16.0),
               child: const Text(
                 "Surabaya Submarine Monument or as known as Monumen Kapal Selam (Monkasel) is the largest submarine monument in Asia, which was built in riverside of Kalimas, Surabaya. This monument was built by idea of Navy Veterans.",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black54,
+                  height: 1.3
+                ),
               )
             ),
             SizedBox(
