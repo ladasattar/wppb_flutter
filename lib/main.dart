@@ -27,7 +27,13 @@ class DetailScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget> [
-            Image.asset("assets/img/submarine-1.jpg"),
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20)
+              ),
+              child: Image.asset("assets/img/submarine-1.jpg"),
+            ),
             Container(
               child: const Text(
                 "Surabaya Submarine Monument",
@@ -41,15 +47,47 @@ class DetailScreen extends StatelessWidget {
               margin: const EdgeInsets.only(top: 16.0),
             ),
             Container(
-                margin: const EdgeInsets.only(top: 16.0, bottom: 8.0),
-                child: const Icon(Icons.calendar_today),
-            ),
-            Container(
-              child: const Text(
-                "Open Everyday",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                ),
+              margin: const EdgeInsets.symmetric(vertical: 32.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: const [
+                      Icon(Icons.calendar_today_outlined),
+                      Text(
+                        'Everyday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          height: 1.5
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: const [
+                      Icon(Icons.access_time),
+                      Text(
+                        '08:00-16:00',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          height: 1.5
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: const [
+                      Icon(Icons.attach_money),
+                      Text(
+                        'Rp15.000',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          height: 1.5
+                        ),
+                      )
+                    ],
+                  ),
+                ],
               ),
             ),
             Container(
