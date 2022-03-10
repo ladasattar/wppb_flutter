@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wppb_flutter/main_screen.dart';
-import 'package:wppb_flutter/model/tourism_place.dart';
 
-void main() {
+void main(List<String> arguments) {
   runApp(const MyApp());
 }
 
