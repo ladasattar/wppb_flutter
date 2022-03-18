@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:wppb_flutter/model/done_tourism_list.dart';
-import 'package:wppb_flutter/model/tourism_list.dart';
+import 'package:wppb_flutter/detail_screen.dart';
+import 'package:wppb_flutter/model/list_item.dart';
 import 'package:wppb_flutter/model/tourism_place.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class TourismList extends StatefulWidget {
+  final List<TourismPlace> doneTourismPlaceList;
+
+  const TourismList({Key? key, required this.doneTourismPlaceList})
+      : super(key: key);
 
   @override
-  _MainScreenState createState() => _MainScreenState();
+  // ignore: no_logic_in_create_state
+  State<TourismList> createState() => _TourismListState(doneTourismPlaceList);
 }
 
-class _MainScreenState extends State<MainScreen> {
-  final List<TourismPlace> doneTourismPlaceList = [];
+class _TourismListState extends State<TourismList> {
+  List<TourismPlace> doneTourismPlaceList = [];
   final List<TourismPlace> tourismPlaceList = [
     TourismPlace(
         name: 'Kampung Arab',
@@ -158,24 +162,33 @@ class _MainScreenState extends State<MainScreen> {
         ]),
   ];
 
-  // ignore: annotate_overrides
+  _TourismListState(this.doneTourismPlaceList);
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wisata Bandung'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.done_outline),
-            onPressed: () {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        final TourismPlace place = tourismPlaceList[index];
+        return InkWell(
+            onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DoneTourismList(
-                    doneTourismPlaceList: doneTourismPlaceList);
+                return DetailScreen(place: place);
               }));
             },
-          )
-        ],
-      ),
-      body: TourismList(doneTourismPlaceList: doneTourismPlaceList),
+            child: ListItem(
+                place: place,
+                isDone: doneTourismPlaceList.contains(place),
+                onCheckboxClick: (bool? value) {
+                  setState(() {
+                    if (value != null) {
+                      value
+                          ? doneTourismPlaceList.add(place)
+                          : doneTourismPlaceList.remove(place);
+                    }
+                  });
+                }));
+      },
+      itemCount: tourismPlaceList.length,
     );
   }
 }
