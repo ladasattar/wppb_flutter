@@ -43,6 +43,12 @@
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"
+    },
+    {
+      "name": "week7",
+      "cwd": "week7",
+      "request": "launch",
+      "type": "dart"
     }
   ]
 }
