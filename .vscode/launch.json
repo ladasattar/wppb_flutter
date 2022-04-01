@@ -1,0 +1,54 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "week1-5",
+      "cwd": "week1-5",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "week1-5 (profile mode)",
+      "cwd": "week1-5",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "week1-5 (release mode)",
+      "cwd": "week1-5",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "week6",
+      "cwd": "week6",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "week6 (profile mode)",
+      "cwd": "week6",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "week6 (release mode)",
+      "cwd": "week6",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "week7",
+      "cwd": "week7",
+      "request": "launch",
+      "type": "dart"
+    }
+  ]
+}
